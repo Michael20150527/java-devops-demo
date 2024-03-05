@@ -7,6 +7,7 @@ pipeline {
         stage('编译') {
             steps {
                 echo "编译..."
+                sh 'pwd && ls -alh'
             }
         }
 
