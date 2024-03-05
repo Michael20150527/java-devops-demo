@@ -4,10 +4,21 @@ pipeline {
         CC = 'clang'
     }
     stages {
+        stage('环境检查') {
+            steps {
+                sh 'printenv'
+                echo "正在检查基本信息"
+                sh 'pwd && ls -alh'
+                sh 'java -version'
+                sh 'git --version'
+                sh 'docker version'
+                sh 'mvn -v'
+            }
+        }
+
         stage('编译') {
             steps {
                 echo "编译..."
-                sh 'pwd && ls -alh'
             }
         }
 
