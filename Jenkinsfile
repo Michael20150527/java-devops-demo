@@ -11,7 +11,7 @@ pipeline {
                 sh 'pwd && ls -alh'
                 sh 'java -version'
                 sh 'git --version'
-                sh 'docker version'
+//                 sh 'docker version'
 //                 sh 'mvn -v'
             }
         }
