@@ -12,13 +12,17 @@ pipeline {
                 sh 'java -version'
                 sh 'git --version'
                 sh 'docker version'
-//                 sh 'mvn -v'
             }
         }
 
         stage('编译') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
             steps {
                 echo "编译..."
+                sh 'pwd && ls -alh'
+                sh 'mvn -v'
             }
         }
 
