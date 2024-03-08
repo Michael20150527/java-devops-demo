@@ -15,7 +15,7 @@ pipeline {
                 sh 'docker version'
                 sh "echo $hello"
                 sh 'echo ${world}'
-                sh "ssh --help"
+//                 sh "ssh --help"
             }
         }
 
