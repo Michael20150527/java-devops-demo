@@ -27,6 +27,7 @@ pipeline {
                 echo "编译..."
                 sh 'pwd && ls -alh'
                 sh 'mvn -v'
+                sh 'mvn clean package -Dmaven.test.skip=true '
             }
         }
 
@@ -36,9 +37,12 @@ pipeline {
             }
         }
 
-        stage('打包') {
+        stage('生成镜像') {
             steps {
                 echo "打包..."
+                //检查Jenkins的docker命令是否能运行
+                sh 'docker version'
+                sh 'pwd && ls -alh'
             }
         }
 
