@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        CC = 'clang'
+        hello = "123456"
+        world = "456789"
     }
     stages {
         stage('环境检查') {
@@ -12,6 +13,9 @@ pipeline {
                 sh 'java -version'
                 sh 'git --version'
                 sh 'docker version'
+                sh "echo $hello"
+                sh 'echo ${world}'
+                sh "ssh --help"
             }
         }
 
