@@ -27,7 +27,7 @@ pipeline {
                 echo "编译..."
                 sh 'pwd && ls -alh'
                 sh 'mvn -v'
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn clean install -Xmx1024m -XX:MaxPermSize=350m -DskipTests'
             }
         }
 
