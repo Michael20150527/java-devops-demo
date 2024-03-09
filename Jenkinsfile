@@ -23,6 +23,10 @@ pipeline {
             agent {
                 docker { image 'maven:3-alpine' }
             }
+
+            tools {
+            		jdk 'java-17'
+            }
             steps {
                 echo "编译..."
                 sh 'pwd && ls -alh'
