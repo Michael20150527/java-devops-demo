@@ -27,7 +27,7 @@ pipeline {
                 echo "编译..."
                 sh 'pwd && ls -alh'
                 sh 'mvn -v'
-                sh 'mvn clean'
+                sh 'mvn clean install -DskipTests'
             }
         }
 
