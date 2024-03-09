@@ -27,7 +27,7 @@ pipeline {
                 echo "编译..."
                 sh 'pwd && ls -alh'
                 sh 'mvn -v'
-                sh 'mvn clean install -Xmx3g -XX:MaxPermSize=700m -DskipTests'
+                sh 'mvn -Xmx3g -XX:MaxPermSize=700m clean package -s "/var/jenkins_home/appconfig/maven/settings.xml" -DskipTests'
             }
         }
 
