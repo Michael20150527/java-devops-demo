@@ -20,14 +20,14 @@ pipeline {
         }
 
         stage('编译') {
-            agent {
-                docker { image 'maven:3-alpine' }
-            }
+//             agent {
+//                 docker { image 'maven:3-alpine' }
+//             }
             steps {
                 echo "编译..."
-                sh 'pwd && ls -alh'
-                sh 'mvn -v'
-                sh 'mvn -B -DskipTests clean package'
+//                 sh 'pwd && ls -alh'
+//                 sh 'mvn -v'
+//                 sh 'mvn -B -DskipTests clean package'
             }
         }
 
